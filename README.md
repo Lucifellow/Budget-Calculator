@@ -8,3 +8,5 @@ To calculate budget of monthly or yearly expenses vs income please follow these 
 3) If its expenses enter negative value 
 
 After values are added you can check your transaction history like a chequing account and final amount you saved after expenses.
+
+You can refresh to delete transaction history but it will retain information of your Account balance, income and expenses with sessionStorage.
