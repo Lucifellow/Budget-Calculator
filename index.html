@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js"></script>
+		<Title>
+			Budget Calculator
+		</Title>
+	</head>
+	
+	<body>
+		<section id = "budget">
+		<header id="title"><h1>Budget Calculator</h1></header>
+		
+		<div id= "balance">
+		<p id ="total">Your Account Balance :</p>
+		<p id = "value"></p>
+		</div>
+		</section>
+		
+		
+		<section id ="expenses">
+		<div id="income-expense-container">
+			<div id="income-container">
+				<p id ="income-label">Income</p>
+				<p id ="income"></p>
+			</div>
+			<div id="expense-container">
+			<p id="expense-label">Expense</p>
+			<p id="expense"></p>
+		</div>
+		</section>
+		
+		
+		<section id="History">
+		<header><h2>Transaction History</h2></header>
+			<div id ="history-container">
+				
+			</div>
+		</section>
+		
+		
+		<section id = "transaction">
+		<header><h2>Add a transaction </h2></header>
+		<div id ="new-transaction">
+			<div id = "name-container">
+				<label id="name-label"><strong>Name</strong></label>
+				<input id="name"  type="textfield" placeholder="Enter name of Transaction" required>
+			</div>
+			<div id="amount-container">
+				<label id="amount-label"><strong>Amount (positive value for income, negative value for expense)</strong></label>
+				<input id="amount" type="number" placeholder="Enter amount" required>
+			</div>
+			<div id = "add-transaction">
+				<button id="add" onclick="buttonClicked()" type="button">Add transaction</button>
+			</div>	
+		</div>
+		</section>
+		
+		
+	</body>
+</html>

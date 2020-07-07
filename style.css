@@ -1,0 +1,166 @@
+ 
+ body{
+	background-color:#F6FDFD ;
+	font-family:'Open Sans', sans-serif;
+ }
+ 
+ #title{
+	 display:flex;
+	 flex-direction:row;
+	 justify-content:center;
+	 align-items:center;
+ }
+ 
+ 
+ #balance{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		margin-top:0;
+ }
+ 
+ #total{
+	font-size:25px;
+	font-weight:bold;
+	
+ }
+ #value{
+	 margin-top:0;
+	 padding-top:0;
+	 font-weight:bold;
+	 font-size:30px;
+ }
+ 
+ 
+ h2{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+ }
+ 
+ 
+ #name-container{
+	 display:flex;
+	 flex-direction:column;
+	 justify-content:center;
+	 align-items:center;
+ }
+ 
+ #amount-container{
+	 display:flex;
+	 flex-direction:column;
+	 justify-content:center;
+	 align-items:center;
+	 padding-top:3vh;
+ }
+ 
+#name-label{
+	padding-bottom:1vh;
+}
+#name{
+	padding-top:1vh;
+	padding-bottom:1vh;
+	padding-left:2vh;
+	padding-right:2vh;
+}
+#amount-label{
+	margin-left:15vw;
+	margin-right:15vw;
+	padding-bottom:1vh;
+}
+
+#amount{
+	padding-top:1vh;
+	padding-bottom:1vh;
+	padding-left:2vh;
+	padding-right:2vh;
+}
+#add-transaction{
+	display:flex;
+	 flex-direction:column;
+	 justify-content:center;
+	 align-items:center;
+	 margin-top:3vh;
+}
+
+#add{
+	padding-top:1vh;
+	padding-bottom:1vh;
+	padding-left:3vh;
+	padding-right:3vh;
+	border:none;
+	background-color:#228B22;
+	color:white;
+	box-shadow: 1px 1px 1px 1px #228B22;
+}
+
+#income-expense-container{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	font-weight:bold;
+	background-color:white;
+	box-shadow:1px 1px 1px 1px black;
+	margin-left:35vw;
+	margin-right:35vw;
+
+	
+}
+
+
+#income-container{
+	display:flex;
+	flex-direction:column;
+	padding:2vw;
+	border-right: 1px solid black;
+	
+}
+
+#income {
+	color:#00FF00;
+}
+#expense-container{
+	display:flex;
+	flex-direction:column;
+	padding:2vw;
+}
+
+#expense{
+	color:red;
+}
+ 
+@media (max-width: 1024px){
+	#income-expense-container{
+		margin-left:0;
+		margin-right:0;
+	}
+}
+
+#history-container{
+	display:flex;
+	flex-direction:column;
+	padding-top:2vh;
+	padding-bottom:2vh;
+}
+
+#history-element{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	background-color:white;
+	box-shadow:1px 1px 1px 1px black;
+	margin-left:35vw;
+	margin-right:35vw;
+	margin-bottom:2vh;
+	
+}
+
+@media (max-width:1024px){
+	#history-element{
+		margin-left:0;
+		margin-right:0;
+	}
+}
