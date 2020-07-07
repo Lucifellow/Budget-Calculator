@@ -29,39 +29,45 @@ window.onload=function(){
 function buttonClicked(){
 	transaction ={
 		name:document.getElementById("name").value,
-		amount:document.getElementById("amount").value
+		amount:parseFloat((document.getElementById("amount").value)).toFixed(2)
 	};
 	
 	document.getElementById("name").value="";
 	document.getElementById("amount").value="";
 	
-	if(transaction.name.length==0 || transaction.amount.length===0){
+	if(transaction.name.length==0 || isNaN(transaction.amount)){
 		alert("Please enter name and amount of transaction");
 	}
-	if(parseInt(transaction.amount)>0 && transaction.name.length!==0){
+	if(parseInt(transaction.amount)>0 && !isNaN(transaction.amount)){
 		income += parseFloat(transaction.amount);
-		document.getElementById("income").innerHTML= "$ "+income.toFixed(2);
+		income=parseFloat(income.toFixed(2));
+		document.getElementById("income").innerHTML= "$ "+income;
 		totalBalance+=income;
-		document.getElementById("value").innerHTML = "$ " + totalBalance.toFixed(2);
+		totalBalance= parseFloat(totalBalance.toFixed(2));
+		document.getElementById("value").innerHTML = "$ " + totalBalance;
 		sessionStorage.setItem("totalBalance",totalBalance);
 		sessionStorage.setItem("income",income);
 		
-	}else if(transaction.name.length!==0){
+	}else if(!isNaN(transaction.amount)){
 		expense += parseFloat(transaction.amount);
-		document.getElementById("expense").innerHTML= "$ "+ Math.abs(expense.toFixed(2));
+		expense = parseFloat(expense.toFixed(2));
+		document.getElementById("expense").innerHTML= "$ "+ Math.abs(expense);
 		totalBalance+=expense;
-		document.getElementById("value").innerHTML = "$ " + totalBalance.toFixed(2);
+		totalBalance= parseFloat(totalBalance.toFixed(2));
+		document.getElementById("value").innerHTML = "$ " + totalBalance;
 		sessionStorage.setItem("expense",expense);
 		sessionStorage.setItem("totalBalance",totalBalance);
 	}
-	transactionArray.push(transaction);
+	
+	if(!isNaN(transaction.amount)){
+		transactionArray.push(transaction);
 		let div =document.createElement('div');
 		div.id="history-element";
 		div.innerHTML = transactionArray[transactionArray.length-1]["name"]
 		+"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; $ &nbsp;" +
 		transactionArray[transactionArray.length-1]["amount"];
 		document.getElementById("history-container").appendChild(div);
-		
+	}
 }
 
 
