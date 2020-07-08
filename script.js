@@ -56,7 +56,7 @@ function buttonClicked(){
 		expense = parseFloat(transaction.amount);
 		expense = parseFloat(expense.toFixed(2));
 		totalExpense += expense; 
-		document.getElementById("expense").innerHTML= "$ "+ Math.abs(totalExpense);
+		document.getElementById("expense").innerHTML= "$ "+ Math.abs(parseFloat(totalExpense).toFixed(2));
 		totalBalance+=expense;
 		totalBalance= parseFloat(totalBalance.toFixed(2));
 		document.getElementById("value").innerHTML = "$ " + totalBalance;
