@@ -3,14 +3,16 @@ let transaction={};
 let totalBalance = 0.00;
 let income= 0.00;
 let expense = 0.00;
+let totalIncome = 0.00;
+let totalExpense = 0.00;
 let transactionArray=[];
 
 window.onload=function(){
 	
 	
 	if(sessionStorage.getItem("expense")===null){
-		sessionStorage.setItem("expense",expense);
-		sessionStorage.setItem("income",income);
+		sessionStorage.setItem("expense",totalExpense);
+		sessionStorage.setItem("income",totalIncome);
 		sessionStorage.setItem("totalBalance",totalBalance);
 	}else{
 	
@@ -39,23 +41,26 @@ function buttonClicked(){
 		alert("Please enter name and amount of transaction");
 	}
 	if(parseInt(transaction.amount)>0 && !isNaN(transaction.amount)){
-		income += parseFloat(transaction.amount);
+		
+		income = parseFloat(transaction.amount);
 		income=parseFloat(income.toFixed(2));
-		document.getElementById("income").innerHTML= "$ "+income;
+		totalIncome +=income;
+		document.getElementById("income").innerHTML= "$ "+parseFloat(totalIncome.toFixed(2));
 		totalBalance+=income;
 		totalBalance= parseFloat(totalBalance.toFixed(2));
 		document.getElementById("value").innerHTML = "$ " + totalBalance;
 		sessionStorage.setItem("totalBalance",totalBalance);
-		sessionStorage.setItem("income",income);
+		sessionStorage.setItem("income",totalIncome);
 		
 	}else if(!isNaN(transaction.amount)){
-		expense += parseFloat(transaction.amount);
+		expense = parseFloat(transaction.amount);
 		expense = parseFloat(expense.toFixed(2));
-		document.getElementById("expense").innerHTML= "$ "+ Math.abs(expense);
+		totalExpense += expense; 
+		document.getElementById("expense").innerHTML= "$ "+ Math.abs(totalExpense);
 		totalBalance+=expense;
 		totalBalance= parseFloat(totalBalance.toFixed(2));
 		document.getElementById("value").innerHTML = "$ " + totalBalance;
-		sessionStorage.setItem("expense",expense);
+		sessionStorage.setItem("expense",totalExpense);
 		sessionStorage.setItem("totalBalance",totalBalance);
 	}
 	
